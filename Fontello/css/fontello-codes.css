@@ -1,0 +1,7 @@
+
+.icon-search:before { content: '\e800'; } /* '' */
+.icon-pin:before { content: '\e801'; } /* '' */
+.icon-logout:before { content: '\e802'; } /* '' */
+.icon-bell-alt:before { content: '\f0f3'; } /* '' */
+.icon-user-circle-o:before { content: '\f2be'; } /* '' */
+.icon-comment:before { content: '\f4ac'; } /* '' */

@@ -1,0 +1,2 @@
+Plik: users/25/Semestr 1/Analiza matematyczna 1/public/student_archive (4).sql ||| Data i godzina: 2024-01-16T00:09:11.716Z ||| Zdarzenie: Usunięcie pliku ||| Szczegóły: Przerwano
+------------------------------------------------------------------------------------------------------------

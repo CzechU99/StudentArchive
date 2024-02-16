@@ -1,0 +1,1171 @@
+*{
+  box-sizing: border-box;
+  font-family: Inter;
+}
+
+@font-face {
+  font-family: 'fontello';
+  src: url('../Fontello/font/fontello.eot?45722881');
+  src: url('../Fontello//font/fontello.eot?45722881#iefix') format('embedded-opentype'),
+       url('../Fontello//font/fontello.woff2?45722881') format('woff2'),
+       url('../Fontello//font/fontello.woff?45722881') format('woff'),
+       url('../Fontello//font/fontello.ttf?45722881') format('truetype'),
+       url('../Fontello//font/fontello.svg?45722881#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body
+{
+  background-color: #C9C9C9;
+}
+
+.all
+{
+  padding: none;
+  margin: none;
+  width: 100%;
+  height: 800px;
+}
+
+.notifi{
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  z-index: 10;
+  margin-top: -45px;
+  margin-left: -2px;
+}
+
+#popover {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 10000;
+  text-align: center;
+}
+
+.navbar {
+  width: 100%;
+  padding: 8px;
+  height: 80px;
+  background: linear-gradient(90deg, #07202F 14.58%, rgba(7, 32, 47, 0.49) 100%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: normal;
+  margin-left: 40px;
+}
+
+.logo a {
+  color: #FFF;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.search {
+  background-color: #D9D9D9;
+  display: inline-block;
+  width: 376px;
+  height: 60px;
+  margin-right: 40px;
+  right: 40px;
+}
+
+.search input[type="text"] {
+  display: flex;
+  width: 270px;
+  height: 44px;
+  margin-top: 8px;
+  margin-left: 20px;
+  float: left;
+  font-size: 22px;
+}
+
+.search input[type="submit"] {
+  display: flex;
+  width: 58px;
+  height: 44px;
+  margin-right: 4px;
+  padding: 0;
+  margin-bottom: 8px;
+  margin-top: 8px;
+  float: right;
+  font-family: "fontello";
+  font-size: 35px;
+  background-color: #D9D9D9;
+  border: none;
+}
+
+#search_result {
+  position: absolute;
+  top: 80px;
+
+}
+
+#search_result table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  border: 2px solid black; /* Czarne obramowanie dla tabelki */
+}
+
+#search_result th, #search_result td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd; /* Czarne obramowanie dla komórek */
+}
+
+#search_result th {
+  background-color: #ababab;
+  font-weight: bolder;
+}
+
+#search_result tr {
+  background-color: #f2f2f2;
+}
+
+#search_result tr:hover {
+  background-color: #f5f5f5;
+}
+
+
+.chatIcon{
+  font-family: "fontello";
+  font-size: 35px;
+  font-style: normal;
+  line-height: 60px;
+}
+
+.notificationIcon{
+    font-family: "fontello";
+    font-size: 35px;
+    font-style: normal;
+    line-height: 60px;
+}
+
+.userIcon
+{
+    font-family: "fontello";
+    font-size: 35px;
+    font-style:normal;
+    line-height: 60px;
+    transition: 0.2s;
+}
+
+.logOutIcon
+{
+    font-family: "fontello";
+    font-size: 35px;
+    font-style:normal;
+    line-height: 60px;
+    transition: 0.2s;
+}
+
+.notificationButton, .userButton, .logOutButton {
+    background-color: #D9D9D9;
+    width: 60px;
+    height: 60px;
+    float: right;
+    padding: 0px;
+    margin-right: 20px;
+    border: none;
+}
+
+.userButton a, .logOutButton a, .notificationButton a{
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: black;
+  transition: 0.2s;
+}
+
+.userButton a:hover i, .logOutButton a:hover i, .notificationButton a:hover i{
+  width: 100%;
+  height: 100%;
+  display: block;
+  text-decoration: none;
+  color: #102836;
+  font-size: 40px;
+  transition: 0.2s;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  float: right;
+}
+
+.wrapper-menu {
+  margin-right: 20px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 330ms ease-out;
+  display: none;
+}
+
+.wrapper-menu.open {
+  transform: rotate(-45deg);  
+}
+
+.line-menu {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  height: 6px;
+}
+
+.line-menu.half {
+  width: 50%;
+}
+
+.line-menu.start {
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: right;
+}
+
+.open .line-menu.start {
+  transform: rotate(-90deg) translateX(3px);
+}
+
+.line-menu.end {
+  align-self: flex-end;
+  transition: transform 330ms cubic-bezier(0.54, -0.81, 0.57, 0.57);
+  transform-origin: left;
+}
+
+.open .line-menu.end {
+  transform: rotate(-90deg) translateX(-3px);
+}
+
+.hamburger-menu-expanded {
+  height: 170px;
+  width: 100%;
+  display: none;
+  background: linear-gradient(90deg, #07202F 14.58%, rgba(7, 32, 47, 0.49) 100%);
+}
+
+.hamburger_row {
+  width: 100%;
+  height: 80px;
+  padding-top: 10px;
+  box-sizing: border-box;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 1000px) {
+  .hamburger-menu {
+      display: flex;
+  }
+  .navbar-right {
+      display: none;
+  }
+  .search {
+      margin: 0px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+  }
+  .notificationButton{
+    margin-right: 45px;
+  }
+  .logOutButton{
+    margin-right: 0px;
+  }
+  .userButton{
+    margin-right: 45px;
+  }
+  #razem_button{
+    width: 376px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 60px;
+  }
+  .wrapper-menu{
+    display: flex;   
+  }
+  #nic{
+      float: right;
+      box-sizing: border-box;
+      padding-top: 20px;
+  }
+}
+
+.container{
+  width: 100%;
+  height: auto;
+  background: #C9C9C9;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+#panel{
+  width: 1753px;
+  height: 1130px;
+  background: #FFF;
+  margin: auto;
+  margin-top: 22px;
+  box-sizing: border-box;
+}
+
+#top{
+  width: 100%;
+  height: 306px;
+}
+
+#detail_inf{
+  float: left;
+  height: 306px;
+  box-sizing: border-box;
+  width: 1050px;
+}
+
+#chart{
+  width: 400px;
+  float: left;
+  height: 260px;
+  margin-top: 23px;
+}
+
+#fileSizeChart{
+  float: left;
+}
+
+#base_inf{
+  width: 700px;
+  height: 306px;
+  box-sizing: border-box;
+  float: left;
+}
+
+.fileamount_number{
+  width: 350px;
+  float: left;
+  height: 40px;
+  margin-top: 30px;
+  margin-left: 150px;
+  color: white;
+  background-color: #102836;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+}
+
+.up{
+  margin-top: 65px;
+}
+
+.fileamount_number2{
+  width: 500px;
+  float: left;
+  height: 40px;
+  margin-top: 30px;
+  margin-left: 75px;
+  color: white;
+  background-color: #102836;
+  font-family: Inter;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 40px;
+  text-align: center;
+}
+
+#kreska2{
+  width: 1px;
+  background-color: #000;
+  float: left;
+  height: 306px;
+}
+
+#imie{
+  width: 645px;
+  height: 68px;
+  color: #000;
+  font-family: Inter;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 36px;
+  margin-left: 60px;
+  box-sizing: border-box;
+  clear: both;
+  float: left;
+}
+
+#email_show{
+  width: 370px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  text-decoration-line: underline;
+  margin-left: 78px;
+  float: left;
+  clear: both;
+}
+
+#pliki{
+  width: 370px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  clear: both;
+  float: left;
+  margin-top: 25px;
+  margin-left: 78px;
+}
+
+#status{
+  width: 370px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  clear: both;
+  float: left;
+  margin-left: 78px;
+  margin-top: 40px;
+}
+
+#uczelnia{
+  width: 370px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  clear: both;
+  float: left;
+  margin-left: 78px;
+}
+
+#kierunek{
+  width: 370px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  clear: both;
+  float: left;
+  margin-left: 78px;
+}
+
+#semestr{
+  width: 370px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  clear: both;
+  float: left;
+  margin-left: 78px;
+}
+
+#nowy_semestr{
+  width: 375px;
+  height: 60px;
+  background: #D9D9D9;
+  margin-left: 472px;
+  margin-top: -120px;
+  float: left;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: 60px;
+  text-align: center;
+}
+
+#krecha{
+  width: 100%;
+  height: 1px;
+  background: #000;
+  float: left;
+  clear: both;
+  box-sizing: border-box;
+}
+
+#left{
+  width: 876px;
+  height: 474px;
+  float: left;
+  box-sizing: border-box;
+}
+
+#kreska{
+  width: 1px;
+  height: 474px;
+  background: #000;
+  float: left;
+  box-sizing: border-box;
+}
+
+#right{
+  width: 876px;
+  height: 474px;
+  float: left;
+  box-sizing: border-box;
+}
+
+#imie_block{
+  width: 394px;
+  height: 60px;
+  background: #D9D9D9;
+  margin-left: 62px;
+  margin-top: 31px;
+  float: left;
+  clear: both;
+}
+
+#user_imie{
+  width: 110px;
+  color: #000;
+  height: 60px;
+  line-height: 60px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  float: left;
+  margin-left: 18px;
+}
+
+#input_imie{
+  width: 254px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+#nazwisko_block{
+  width: 394px;
+  height: 60px;
+  background: #D9D9D9;
+  margin-left: 62px;
+  margin-top: 25px;
+  float: left;
+  clear: both;
+}
+
+#user_nazwisko{
+  width: 110px;
+  color: #000;
+  height: 60px;
+  line-height: 60px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  float: left;
+  margin-left: 18px;
+}
+
+#input_nazwisko{
+  width: 254px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+#uczelnia_block{
+  width: 394px;
+  height: 60px;
+  background: #D9D9D9;
+  margin-left: 62px;
+  margin-top: 25px;
+  float: left;
+  clear: both;
+}
+
+#user_uczelnia{
+  width: 110px;
+  color: #000;
+  height: 60px;
+  line-height: 60px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  float: left;
+  margin-left: 18px;
+}
+
+#input_uczelnia{
+  width: 254px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+#ucz{
+  display: none;
+}
+
+#kier{
+  display: none;
+}
+
+#kierunek_block{
+  width: 394px;
+  height: 60px;
+  background: #D9D9D9;
+  margin-left: 62px;
+  margin-top: 25px;
+  float: left;
+  clear: both;
+}
+
+#user_kierunek{
+  width: 110px;
+  color: #000;
+  height: 60px;
+  line-height: 60px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  float: left;
+  margin-left: 18px;
+}
+
+#input_kierunek{
+  width: 254px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+#email_block{
+  width: 394px;
+  height: 60px;
+  background: #D9D9D9;
+  margin-left: 62px;
+  margin-top: 25px;
+  float: left;
+  clear: both;
+}
+
+#user_email{
+  width: 110px;
+  color: #000;
+  height: 60px;
+  line-height: 60px;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  float: left;
+  margin-left: 18px;
+}
+
+#input_email{
+  width: 254px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+#save{
+  width: 251px;
+  height: 60px;
+  background: #D9D9D9;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: 60px;
+  margin-top: 202px;
+  margin-left: 90px;
+}
+
+#save:hover{
+  background: #888787;
+  color: #FFF;
+  cursor: pointer;
+}
+
+#haslo_change{
+  color: #000;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: normal;
+  float: left;
+  margin-top: 20px;
+  margin-left: 332px;
+}
+
+#passwd_block{
+  width: 526px;
+  height: 60px;
+  background: #D9D9D9;
+  clear: both;
+  float: left;
+  margin-left: 84px;
+  margin-top: 17px;
+}
+
+#user_passwd{
+  width: 220px;
+  height: 60px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: 60px;
+  margin-left: 16px;
+  float: left;
+  text-align: right;
+  padding-right: 30px;
+}
+
+#input_passwd{
+  width: 279px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px
+}
+
+#passwd_new_block{
+  width: 526px;
+  height: 60px;
+  background: #D9D9D9;
+  clear: both;
+  float: left;
+  margin-left: 84px;
+  margin-top: 25px;
+}
+
+#user_passwd_new{
+  width: 220px;
+  height: 60px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: 60px;
+  margin-left: 16px;
+  float: left;
+  text-align: right;
+  padding-right: 30px;
+}
+
+#input_passwd_new{
+  width: 279px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px
+}
+
+#passwd2_new_block{
+  width: 526px;
+  height: 60px;
+  background: #D9D9D9;
+  clear: both;
+  float: left;
+  margin-left: 84px;
+  margin-top: 25px;
+}
+
+#user_passwd_new2{
+  width: 220px;
+  height: 60px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: 60px;
+  margin-left: 16px;
+  float: left;
+}
+
+#input_passwd_new2{
+  width: 279px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #FFF;
+  float: left;
+  margin-top: 8px;
+  padding-left: 10px;
+  font-size: 20px
+}
+
+#save_passwd{
+  width: 251px;
+  height: 60px;
+  background: #D9D9D9;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: 60px;
+  clear: both;
+  float: left;
+  margin-left: 222px;
+  margin-top: 65px;
+}
+
+#save_passwd_red{
+  width: 251px;
+  height: 60px;
+  background: red;
+  color: #000;
+  text-align: center;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 825;
+  line-height: 60px;
+  clear: both;
+  float: left;
+  margin-left: 222px;
+  margin-top: 65px;
+}
+
+@media only screen and (max-width: 1780px) {
+  #kreska{
+    width: 450px;
+    height: 1px;
+    background: #000;
+    float: left;
+    clear: both;
+  }
+  #detail_inf{
+    width: 450px;
+    height: 500px;
+    box-sizing: border-box;
+    float: left;
+  }
+  #panel{
+    height: 1170px;
+    width: 450px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #right{
+    width: 450px;
+    margin: auto;
+    clear: both;
+    float: left;
+    height: 400px;
+  }
+  #haslo_change{
+    width: 100%;
+    text-align: center;
+    margin-left: 0px;
+  }
+  #passwd_block{
+    width: 440px;
+    margin-left: 5px;
+  }
+  #user_passwd{
+    width: 150px;
+    padding: 0px;
+    text-align: left;
+  }
+  #input_passwd{
+    width: 260px;
+    margin-left: 0px;
+  }
+  #passwd_new_block{
+    width: 440px;
+    margin-left: 5px;
+  }
+  #user_passwd_new{
+    width: 150px;
+    padding: 0px;
+    text-align: center;
+    padding-right: 5px;
+  }
+  #input_passwd_new{
+    width: 260px;
+    margin-left: 0px;
+  }
+  #passwd2_new_block{
+    width: 440px;
+    margin-left: 5px;
+    height: 80px;
+  }
+  #user_passwd_new2{
+    width: 150px;
+    padding: 0px;
+    text-align: center;
+    height: 60px;
+    line-height: 30px;
+    padding-right: 5px;
+    margin-top: 10px;
+  }
+  #input_passwd_new2{
+    width: 260px;
+    margin-left: 0px;
+    margin-top: 17px;
+  }
+  #save_passwd{
+    margin-left: 100px;
+    margin-top: 25px;
+  }
+  #save_passwd_red{
+    margin-left: 100px;
+    margin-top: 25px;
+  }
+  #save{
+    clear: both;
+    float: left;
+    margin-left: 95px;
+    margin-top: 25px;
+  }
+  #left{
+    width: 450px;
+    margin: auto;
+    float: left;
+    height: 550px;
+    clear: both;
+  }
+  #imie_block{
+    width: 440px;
+    margin-left: 5px;
+  }
+  #user_imie{
+    width: 160px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+  #input_imie{
+    width: 260px;
+    margin-left: 0px;
+  }
+  #nazwisko_block{
+    width: 440px;
+    margin-left: 5px;
+  }
+  #user_nazwisko{
+    width: 160px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+  #input_nazwisko{
+    width: 260px;
+    margin-left: 0px;
+  }
+  #uczelnia_block{
+    width: 440px;
+    margin-left: 5px;
+  }
+  #user_uczelnia{
+    width: 160px;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+  #input_uczelnia{
+    width: 260px;
+    margin-left: 0px;
+  }
+  #kierunek_block{
+    width: 440px;
+    margin-left: 5px;
+  }
+  #user_kierunek{
+    width: 160px;
+    padding: 0px;
+    text-align: center;
+    margin: 0px;
+  }
+  #input_kierunek{
+    width: 260px;
+    margin-left: 0px;
+  }
+  #email_block{
+    width: 440px;
+    margin-left: 5px;
+  }
+  #user_email{
+    width: 160px;
+    padding: 0px;
+    text-align: center;
+    margin: 0px;
+  }
+  #input_email{
+    width: 260px;
+    margin-left: 0px;
+  }
+  #nowy_semestr{
+    margin-left: 75px;
+    float: left;
+    clear: both;
+    margin-top: 10px;
+    width: 300px;
+    margin-bottom: 25px;
+  }
+  #krecha{
+    width: 450px;
+    margin: auto;
+    float: left;
+  }
+  #base_inf{
+    height: 240px;
+    width: 450px;
+    margin: auto;
+    float: left;
+    clear: both;
+  }
+  .fileamount_number{
+    margin-left: 50px;
+    margin-top: 25px;
+  }
+  .fileamount_number2{
+    margin-left: 0px;
+    width: 450px;
+    margin-top: 25px;
+  }
+  #imie{
+    width: 450px;
+    text-align: center;
+    margin-left: 0px;
+  }
+  #email_show{
+    width: 425px;
+    margin-left: 25px;
+    box-sizing: border-box;
+  }
+  #pliki{
+    width: 425px;
+    margin-left: 25px;
+  }
+  #status{
+    width: 425px;
+    margin-left: 25px;
+  }
+  #uczelnia{
+    width: 425px;
+    margin-left: 25px;
+  }
+  #kierunek{
+    width: 425px;
+    margin-left: 25px;
+  }
+  #semestr{
+    width: 425px;
+    margin-left: 25px;
+  }
+  #bg{
+    width: 100%;
+    height: 2450px;
+    background-color: white;
+  }
+  #chart{
+    width: 450px;
+    float: left;
+    clear: both;
+  }
+  .up{
+    margin-top: 30px;
+  }
+}
+
+.button-common {
+  font-size: 16px;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  color: black;
+  cursor: pointer;
+  margin: 5px;
+  text-align: center;
+}
+
+/* Styles for "Archiwizuj Konto" button */
+.button-archiwizuj {
+  background-color: #D9D9D9;
+}
+
+/* Styles for "Usun Konto" button */
+.button-usun {
+  background-color: red;
+}
+
+/* Hover effect */
+.button-common:hover, .button-archiwizuj:hover, .button-usun:hover {
+  background-color: #ccc;
+}
+

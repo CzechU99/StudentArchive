@@ -1,0 +1,16 @@
+Plik: ankieta.docx ||| Data i godzina: 2024-01-06T17:50:37.305Z ||| Zdarzenie: Dodanie pliku ||| Szczegóły: Nowy plik
+------------------------------------------------------------------------------------------------------------
+Plik: users/37/Semestr 1/Analiza matematyczna I/public/ankieta.docx ||| Data i godzina: 2024-01-06T17:51:29.442Z ||| Zdarzenie: Usunięcie pliku ||| Szczegóły: Pomyślne
+------------------------------------------------------------------------------------------------------------
+Plik: users/37/Semestr 1/Analiza matematyczna I/public/Badanie stabilności układów na podstawie kryterium Nyquista - Amadeusz Kobos.pdf ||| Data i godzina: 2024-01-06T17:51:31.479Z ||| Zdarzenie: Usunięcie pliku ||| Szczegóły: Pomyślne
+------------------------------------------------------------------------------------------------------------
+Plik: users/37/Semestr 1/asd ||| Data i godzina: 2024-01-06T17:53:43.211Z ||| Zdarzenie: Usunięcie folder ||| Szczegóły: Pomyślne
+------------------------------------------------------------------------------------------------------------
+Plik: users/37/Semestr 1/Analiza matematyczna I/public/Sprint4Zadanie (1).txt ||| Data i godzina: 2024-01-06T17:53:57.636Z ||| Zdarzenie: Usunięcie plik ||| Szczegóły: Pomyślne
+------------------------------------------------------------------------------------------------------------
+Plik: users/37/Semestr 1/Analiza matematyczna I ||| Data i godzina: 2024-01-21T08:12:53.400Z ||| Zdarzenie: Usunięcie folderu, wraz z plikami ||| Szczegóły: Przerwano
+------------------------------------------------------------------------------------------------------------
+Plik: users/37/Semestr 1/Analiza matematyczna I/public/Sprawozdanie lab 3 i 4 -Amadeusz Kobos.pdf ||| Data i godzina: 2024-01-21T09:16:19.354Z ||| Zdarzenie: Usunięcie pliku ||| Szczegóły: Pomyślne
+------------------------------------------------------------------------------------------------------------
+Plik: P1D2-Raport-Testerski.pdf ||| Data i godzina: 2024-01-21T09:16:24.024Z ||| Zdarzenie: Dodanie pliku ||| Szczegóły: NOWY PLIK
+------------------------------------------------------------------------------------------------------------
